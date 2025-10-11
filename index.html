@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Pace Chart - Your Ultimate Running Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1 class="hero-title">Marathon Pace Chart</h1>
+            <p class="hero-subtitle">Your ultimate guide to marathon pacing and half marathon pace charts</p>
+            <div class="hero-description">
+                <p>Find the perfect pace for your marathon or half marathon with our comprehensive pace charts and custom pace calculator.</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="pace-charts">
+                <div class="chart-card marathon-card">
+                    <div class="chart-icon">🏃‍♂️</div>
+                    <h2>Marathon Pace Chart</h2>
+                    <p>Complete marathon pacing guide with detailed charts for every finish time from 2:30 to 6:00+</p>
+                    <button class="chart-button marathon-button" onclick="navigateToMarathon()">
+                        View Marathon Pace Chart
+                    </button>
+                </div>
+
+                <div class="chart-card half-marathon-card">
+                    <div class="chart-icon">🏃‍♀️</div>
+                    <h2>Half Marathon Pace Chart</h2>
+                    <p>Half marathon pacing strategies and charts for finish times from 1:15 to 3:00+</p>
+                    <button class="chart-button half-marathon-button" onclick="navigateToHalfMarathon()">
+                        View Half Marathon Pace Chart
+                    </button>
+                </div>
+            </div>
+
+            <div class="calculator-section">
+                <h2>Custom Pace Calculator</h2>
+                <div class="calculator-card">
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="distance">Distance:</label>
+                            <select id="distance">
+                                <option value="5">5K</option>
+                                <option value="10">10K</option>
+                                <option value="21.0975">Half Marathon</option>
+                                <option value="42.195">Marathon</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="hours">Hours:</label>
+                            <input type="number" id="hours" min="0" max="6" value="3">
+                        </div>
+                        <div class="input-group">
+                            <label for="minutes">Minutes:</label>
+                            <input type="number" id="minutes" min="0" max="59" value="30">
+                        </div>
+                        <div class="input-group">
+                            <label for="seconds">Seconds:</label>
+                            <input type="number" id="seconds" min="0" max="59" value="0">
+                        </div>
+                    </div>
+                    <button class="calculate-button" onclick="calculatePace()">Calculate Pace</button>
+                    <div id="pace-result" class="pace-result"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Marathon Pace Chart. Your ultimate running companion.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

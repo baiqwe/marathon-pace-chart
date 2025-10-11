@@ -1,0 +1,312 @@
+/* Marathon-specific styles */
+.back-button {
+    margin-top: 30px;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-link:hover {
+    background: white;
+    color: #667eea;
+}
+
+.pace-overview {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pace-overview h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2d3748;
+}
+
+.pace-overview p {
+    font-size: 1.2rem;
+    color: #718096;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Time Grid */
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 80px;
+}
+
+.time-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.time-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #667eea;
+}
+
+.time-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.time-badge.elite {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #744210;
+}
+
+.time-badge.advanced {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.time-badge.intermediate {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+}
+
+.time-badge.beginner {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+}
+
+.time-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 20px 0 10px;
+    color: #2d3748;
+}
+
+.time-card p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.pace-details {
+    margin-top: 15px;
+}
+
+.pace-details span {
+    background: #f7fafc;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Pace Tips */
+.pace-tips {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 40px;
+}
+
+.pace-tips h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #2d3748;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.tip-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+}
+
+.tip-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2d3748;
+}
+
+.tip-card p {
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* Individual Pace Page Styles */
+.pace-detail-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pace-detail-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+.pace-summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.pace-summary h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.pace-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.pace-stat {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.pace-stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.pace-stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.pace-table-container {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.pace-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.pace-table th,
+.pace-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pace-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.pace-table tr:hover {
+    background: #f8f9fa;
+}
+
+.kilometer {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.split-time {
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+}
+
+.cumulative-time {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .time-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .time-card {
+        padding: 25px 20px;
+    }
+    
+    .pace-tips {
+        padding: 30px 20px;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pace-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pace-detail-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pace-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .pace-table-container {
+        padding: 20px 15px;
+        overflow-x: auto;
+    }
+    
+    .pace-table {
+        min-width: 500px;
+    }
+}
