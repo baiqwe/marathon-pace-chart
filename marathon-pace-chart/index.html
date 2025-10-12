@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathon Pace Chart - Complete Guide to Marathon Pacing</title>
+    <meta name="description" content="Complete marathon pace chart with detailed pacing guides for every finish time from 2:30 to 6:00. Find your perfect marathon pace with our comprehensive pace charts and training strategies.">
+    <meta name="keywords" content="marathon pace chart, marathon pacing, marathon pace calculator, marathon training, marathon splits, marathon strategy">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../marathon-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1 class="hero-title">Marathon Pace Chart</h1>
+            <p class="hero-subtitle">Complete marathon pacing guide for every finish time</p>
+            <div class="back-button">
+                <a href="../index.html" class="back-link">← Back to Home</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="pace-overview">
+                <h2>Choose Your Target Marathon Finish Time</h2>
+                <p>Select your target marathon finish time to view detailed pacing information, including per-kilometer and per-mile splits. Our comprehensive marathon pace chart covers every finish time from elite level to beginner friendly.</p>
+            </div>
+
+            <div class="time-grid">
+                <div class="time-card" onclick="navigateToPacePage('2-30-marathon-pace')">
+                    <div class="time-badge elite">Elite</div>
+                    <h3>2:30:00</h3>
+                    <p>3:33 /km • 5:44 /mile</p>
+                    <div class="pace-details">
+                        <span>Elite Level</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('2-45-marathon-pace')">
+                    <div class="time-badge advanced">Advanced</div>
+                    <h3>2:45:00</h3>
+                    <p>3:54 /km • 6:17 /mile</p>
+                    <div class="pace-details">
+                        <span>Advanced Level</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('3-00-marathon-pace')">
+                    <div class="time-badge advanced">Advanced</div>
+                    <h3>3:00:00</h3>
+                    <p>4:16 /km • 6:52 /mile</p>
+                    <div class="pace-details">
+                        <span>Boston Qualifier</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('3-15-marathon-pace')">
+                    <div class="time-badge intermediate">Intermediate</div>
+                    <h3>3:15:00</h3>
+                    <p>4:37 /km • 7:26 /mile</p>
+                    <div class="pace-details">
+                        <span>Strong Runner</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('3-30-marathon-pace')">
+                    <div class="time-badge intermediate">Intermediate</div>
+                    <h3>3:30:00</h3>
+                    <p>4:58 /km • 8:00 /mile</p>
+                    <div class="pace-details">
+                        <span>Popular Goal</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('3-45-marathon-pace')">
+                    <div class="time-badge intermediate">Intermediate</div>
+                    <h3>3:45:00</h3>
+                    <p>5:20 /km • 8:35 /mile</p>
+                    <div class="pace-details">
+                        <span>Good Pace</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('4-00-marathon-pace')">
+                    <div class="time-badge beginner">Beginner</div>
+                    <h3>4:00:00</h3>
+                    <p>5:41 /km • 9:09 /mile</p>
+                    <div class="pace-details">
+                        <span>First Marathon</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('4-15-marathon-pace')">
+                    <div class="time-badge beginner">Beginner</div>
+                    <h3>4:15:00</h3>
+                    <p>6:02 /km • 9:44 /mile</p>
+                    <div class="pace-details">
+                        <span>Comfortable Pace</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('4-30-marathon-pace')">
+                    <div class="time-badge beginner">Beginner</div>
+                    <h3>4:30:00</h3>
+                    <p>6:24 /km • 10:18 /mile</p>
+                    <div class="pace-details">
+                        <span>Steady Pace</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('4-45-marathon-pace')">
+                    <div class="time-badge beginner">Beginner</div>
+                    <h3>4:45:00</h3>
+                    <p>6:45 /km • 10:52 /mile</p>
+                    <div class="pace-details">
+                        <span>Enjoyable Pace</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('5-00-marathon-pace')">
+                    <div class="time-badge beginner">Beginner</div>
+                    <h3>5:00:00</h3>
+                    <p>7:07 /km • 11:27 /mile</p>
+                    <div class="pace-details">
+                        <span>Walk/Run Friendly</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('5-30-marathon-pace')">
+                    <div class="time-badge beginner">Beginner</div>
+                    <h3>5:30:00</h3>
+                    <p>7:49 /km • 12:35 /mile</p>
+                    <div class="pace-details">
+                        <span>Walk/Run Mix</span>
+                    </div>
+                </div>
+
+                <div class="time-card" onclick="navigateToPacePage('6-00-marathon-pace')">
+                    <div class="time-badge beginner">Beginner</div>
+                    <h3>6:00:00</h3>
+                    <p>8:32 /km • 13:44 /mile</p>
+                    <div class="pace-details">
+                        <span>Walking Pace</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pace-tips">
+                <h2>Marathon Pacing Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>🏃‍♂️ Start Conservative</h3>
+                        <p>Begin 10-15 seconds per mile slower than your target pace for the first few miles.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>⚡ Negative Split</h3>
+                        <p>Run the second half slightly faster than the first half for optimal performance.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>💧 Hydration Strategy</h3>
+                        <p>Drink 4-6 ounces of fluid every 15-20 minutes during the race.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>🍯 Fueling Plan</h3>
+                        <p>Consume 30-60g of carbohydrates per hour after the first hour.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Marathon Pace Chart. Your ultimate running companion.</p>
+        </footer>
+    </div>
+
+    <script>
+        function navigateToPacePage(timeKey) {
+            window.location.href = timeKey + '/';
+        }
+    </script>
+</body>
+</html>

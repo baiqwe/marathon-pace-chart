@@ -1,10 +1,10 @@
 // Navigation functions
 function navigateToMarathon() {
-    window.location.href = 'marathon-pace-chart.html';
+    window.location.href = 'marathon-pace-chart-new/';
 }
 
 function navigateToHalfMarathon() {
-    window.location.href = 'half-marathon-pace-chart.html';
+    window.location.href = 'half-marathon-pace-chart-new/';
 }
 
 // Pace Calculator
