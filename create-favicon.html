@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Favicon Files</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        button { margin: 5px; padding: 10px; }
+        .icon-set { display: flex; flex-wrap: wrap; gap: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Marathon Pace Website - Favicon Generator</h1>
+    
+    <div class="icon-set">
+        <div>
+            <h3>16x16 Favicon</h3>
+            <canvas id="favicon16" width="16" height="16"></canvas>
+            <br><button onclick="downloadIcon('favicon16', 'favicon-16x16.png')">Download 16x16</button>
+        </div>
+        
+        <div>
+            <h3>32x32 Favicon</h3>
+            <canvas id="favicon32" width="32" height="32"></canvas>
+            <br><button onclick="downloadIcon('favicon32', 'favicon-32x32.png')">Download 32x32</button>
+        </div>
+        
+        <div>
+            <h3>180x180 Apple Touch Icon</h3>
+            <canvas id="apple180" width="180" height="180"></canvas>
+            <br><button onclick="downloadIcon('apple180', 'apple-touch-icon.png')">Download Apple Icon</button>
+        </div>
+        
+        <div>
+            <h3>192x192 Android Icon</h3>
+            <canvas id="android192" width="192" height="192"></canvas>
+            <br><button onclick="downloadIcon('android192', 'android-chrome-192x192.png')">Download Android 192</button>
+        </div>
+        
+        <div>
+            <h3>512x512 Android Icon</h3>
+            <canvas id="android512" width="512" height="512"></canvas>
+            <br><button onclick="downloadIcon('android512', 'android-chrome-512x512.png')">Download Android 512</button>
+        </div>
+    </div>
+    
+    <br><br>
+    <button onclick="generateAllIcons()" style="background: #4F46E5; color: white; padding: 15px 30px; font-size: 16px;">Generate All Icons</button>
+    
+    <script>
+        function drawMarathonIcon(ctx, size) {
+            const scale = size / 32; // Base size is 32x32
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background circle
+            ctx.fillStyle = '#4F46E5';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Running figure
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = Math.max(1, 2 * scale);
+            ctx.lineCap = 'round';
+            
+            // Body
+            ctx.beginPath();
+            ctx.moveTo(4 * scale, 10 * scale);
+            ctx.quadraticCurveTo(5 * scale, 9 * scale, 6 * scale, 9 * scale);
+            ctx.quadraticCurveTo(7 * scale, 9 * scale, 8 * scale, 10 * scale);
+            ctx.stroke();
+            
+            // Head
+            ctx.beginPath();
+            ctx.arc(5 * scale, 8 * scale, 1 * scale, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Arms
+            ctx.beginPath();
+            ctx.moveTo(6 * scale, 7 * scale);
+            ctx.quadraticCurveTo(7 * scale, 6 * scale, 8 * scale, 6 * scale);
+            ctx.quadraticCurveTo(9 * scale, 6 * scale, 10 * scale, 7 * scale);
+            ctx.stroke();
+            
+            // Pace lines
+            ctx.lineWidth = Math.max(0.5, 1.5 * scale);
+            ctx.beginPath();
+            for (let i = 0; i < 11; i++) {
+                const x = 3 * scale + i * 2 * scale;
+                const y = i % 2 === 0 ? 12 * scale : 11 * scale;
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.stroke();
+            
+            // Time text (only for larger sizes)
+            if (size >= 32) {
+                ctx.fillStyle = 'white';
+                ctx.font = `bold ${Math.max(4, 6 * scale)}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.fillText('42.2', size/2, 14 * scale);
+            }
+        }
+        
+        function generateAllIcons() {
+            const sizes = [
+                { id: 'favicon16', size: 16 },
+                { id: 'favicon32', size: 32 },
+                { id: 'apple180', size: 180 },
+                { id: 'android192', size: 192 },
+                { id: 'android512', size: 512 }
+            ];
+            
+            sizes.forEach(({ id, size }) => {
+                const canvas = document.getElementById(id);
+                const ctx = canvas.getContext('2d');
+                drawMarathonIcon(ctx, size);
+            });
+            
+            console.log('All icons generated!');
+        }
+        
+        function downloadIcon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+        
+        // Generate all icons on page load
+        window.onload = generateAllIcons;
+    </script>
+</body>
+</html>

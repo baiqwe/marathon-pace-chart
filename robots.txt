@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://marathon-pace.com/sitemap.xml
+Sitemap: https://MARATHON-PACE.COM/sitemap.xml
 
 # Allow all search engines to crawl all content
 # No restrictions on crawling
