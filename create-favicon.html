@@ -49,62 +49,40 @@
     
     <script>
         function drawMarathonIcon(ctx, size) {
-            const scale = size / 32; // Base size is 32x32
-            
-            // Clear canvas
-            ctx.clearRect(0, 0, size, size);
-            
-            // Background circle
-            ctx.fillStyle = '#4F46E5';
+            const s = size;
+            const r = s / 2;
+            ctx.clearRect(0, 0, s, s);
+
+            // Background: orange circle (search result friendly)
+            ctx.fillStyle = '#FF5A00';
             ctx.beginPath();
-            ctx.arc(size/2, size/2, size/2, 0, 2 * Math.PI);
+            ctx.arc(r, r, r, 0, Math.PI * 2);
             ctx.fill();
-            
-            // Running figure
-            ctx.strokeStyle = 'white';
-            ctx.lineWidth = Math.max(1, 2 * scale);
-            ctx.lineCap = 'round';
-            
-            // Body
+
+            // Runner glyph: simplified lightning-run mark in white
+            ctx.save();
+            ctx.translate(r, r);
+            ctx.rotate(-8 * Math.PI / 180);
             ctx.beginPath();
-            ctx.moveTo(4 * scale, 10 * scale);
-            ctx.quadraticCurveTo(5 * scale, 9 * scale, 6 * scale, 9 * scale);
-            ctx.quadraticCurveTo(7 * scale, 9 * scale, 8 * scale, 10 * scale);
-            ctx.stroke();
-            
-            // Head
-            ctx.beginPath();
-            ctx.arc(5 * scale, 8 * scale, 1 * scale, 0, 2 * Math.PI);
+            ctx.moveTo(-0.26 * s, -0.10 * s);
+            ctx.lineTo(0.02 * s, -0.28 * s);
+            ctx.lineTo(-0.06 * s, -0.08 * s);
+            ctx.lineTo(0.26 * s, 0.10 * s);
+            ctx.lineTo(-0.02 * s, 0.28 * s);
+            ctx.lineTo(0.06 * s, 0.08 * s);
+            ctx.closePath();
+            ctx.fillStyle = '#FFFFFF';
             ctx.fill();
-            
-            // Arms
+            ctx.restore();
+
+            // Subtle inner shadow ring for depth
+            const grad = ctx.createRadialGradient(r, r, r * 0.2, r, r, r);
+            grad.addColorStop(0, 'rgba(0,0,0,0)');
+            grad.addColorStop(1, 'rgba(0,0,0,0.10)');
+            ctx.fillStyle = grad;
             ctx.beginPath();
-            ctx.moveTo(6 * scale, 7 * scale);
-            ctx.quadraticCurveTo(7 * scale, 6 * scale, 8 * scale, 6 * scale);
-            ctx.quadraticCurveTo(9 * scale, 6 * scale, 10 * scale, 7 * scale);
-            ctx.stroke();
-            
-            // Pace lines
-            ctx.lineWidth = Math.max(0.5, 1.5 * scale);
-            ctx.beginPath();
-            for (let i = 0; i < 11; i++) {
-                const x = 3 * scale + i * 2 * scale;
-                const y = i % 2 === 0 ? 12 * scale : 11 * scale;
-                if (i === 0) {
-                    ctx.moveTo(x, y);
-                } else {
-                    ctx.lineTo(x, y);
-                }
-            }
-            ctx.stroke();
-            
-            // Time text (only for larger sizes)
-            if (size >= 32) {
-                ctx.fillStyle = 'white';
-                ctx.font = `bold ${Math.max(4, 6 * scale)}px Arial`;
-                ctx.textAlign = 'center';
-                ctx.fillText('42.2', size/2, 14 * scale);
-            }
+            ctx.arc(r, r, r, 0, Math.PI * 2);
+            ctx.fill();
         }
         
         function generateAllIcons() {
