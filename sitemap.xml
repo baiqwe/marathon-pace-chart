@@ -177,4 +177,64 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Knowledge Hub -->
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Knowledge Articles -->
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/marathon-pace-guide-marathon-pace-chart/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/half-marathon-pace-strategy-half-marathon-pace-chart/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/running-pace-calculator-pace-per-km-mile/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- New Q&A Knowledge Pages -->
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/how-long-is-a-marathon-how-many-miles-kilometers-marathon/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/how-long-does-it-take-to-run-train-for-a-marathon/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/how-far-is-a-marathon-how-many-miles-is-a-half-marathon/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/when-is-the-boston-marathon-qualify-for-boston/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://MARATHON-PACE.COM/knowledge/why-is-a-marathon-26-2-miles-history-olympics/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

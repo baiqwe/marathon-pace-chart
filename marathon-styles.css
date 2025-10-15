@@ -294,6 +294,14 @@
     .pace-detail-header h1 {
         font-size: 2.2rem;
     }
+
+    .pace-overview h2 {
+        font-size: 2rem;
+    }
+
+    .pace-overview p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -302,11 +310,23 @@
     }
     
     .pace-table-container {
-        padding: 20px 15px;
+        padding: 16px 12px;
         overflow-x: auto;
     }
     
     .pace-table {
-        min-width: 500px;
+        min-width: 480px;
+    }
+
+    .time-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .time-card p {
+        font-size: 1rem;
+    }
+
+    .back-link {
+        padding: 8px 14px;
     }
 }

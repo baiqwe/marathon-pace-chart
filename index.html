@@ -20,12 +20,46 @@
 
     <!-- Favicon and Icons -->
     <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    <link rel="icon" sizes="192x192" href="/icon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#4F46E5">
+
+    <!-- Open Graph / Twitter (helps Google select a brand image) -->
+    <meta property="og:title" content="Marathon Pace Chart - Your Ultimate Running Guide">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/icon.svg">
+    <meta property="og:url" content="/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Marathon Pace Chart">
+    <meta name="twitter:image" content="/icon.svg">
+
+    <!-- Structured Data: Organization & WebSite with logo for search result branding -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Marathon Pace Chart",
+      "url": "/",
+      "logo": "/icon.svg"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Marathon Pace Chart",
+      "url": "/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 <body>
     
@@ -57,6 +91,13 @@
                     <button class="chart-button half-marathon-button" onclick="navigateToHalfMarathon()">
                         View Half Marathon Pace Chart
                     </button>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-icon">📚</div>
+                    <h2>Running Knowledge Hub</h2>
+                    <p>Deep-dive articles on marathon pace, half marathon pace charts, and pace calculator tips.</p>
+                    <a class="chart-button" href="/knowledge/">Explore Knowledge</a>
                 </div>
             </div>
 
