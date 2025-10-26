@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-13BSS6RE7L"></script>
@@ -15,7 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Marathon Pace Chart - Your Ultimate Running Guide</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Professional marathon pace chart website providing complete marathon and half marathon pace charts, running knowledge center and pace calculator to help you train scientifically and achieve your goals.">
+    <meta name="keywords" content="marathon pace chart,half marathon pace,running pace calculator,marathon training,running knowledge">
+    <link rel="canonical" href="https://marathon-pace.com/">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="marathon-styles.css?v=3?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon and Icons -->
@@ -29,16 +33,16 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#4F46E5">
 
-    <!-- Open Graph / Twitter (helps Google select a brand image) -->
+    <!-- Open Graph / Twitter -->
     <meta property="og:title" content="Marathon Pace Chart - Your Ultimate Running Guide">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/icon.svg">
-    <meta property="og:url" content="/">
+    <meta property="og:url" content="https://marathon-pace.com/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Marathon Pace Chart">
     <meta name="twitter:image" content="/icon.svg">
 
-    <!-- Structured Data: Organization & WebSite with logo for search result branding -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,88 +67,125 @@
     </script>
 </head>
 <body>
-    
-
-    <div class="container">
-        <header class="hero">
-            <h1 class="hero-title">Marathon Pace Chart</h1>
-            <p class="hero-subtitle">Your ultimate guide to marathon pacing and half marathon pace charts</p>
-            <div class="hero-description">
-                <p>Find the perfect pace for your marathon or half marathon with our comprehensive pace charts and custom pace calculator.</p>
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/icon.svg" alt="Brand Logo" class="logo-icon">
+                <span class="logo-text">Brand Logo</span>
             </div>
-        </header>
-
-        <main class="main-content">
-            <div class="pace-charts">
-                <div class="chart-card marathon-card">
-                    <div class="chart-icon">🏃‍♂️</div>
-                    <h2>Marathon Pace Chart</h2>
-                    <p>Complete marathon pacing guide with detailed charts for every finish time from 2:30 to 6:00+</p>
-                    <button class="chart-button marathon-button" onclick="navigateToMarathon()">
-                        View Marathon Pace Chart
-                    </button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Marathon Pace Chart</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/marathon-pace-chart-final/" class="dropdown-link">Marathon Pace Chart</a></li>
+                        <li><a href="/marathon-pace-chart-final/2-30-marathon-pace/" class="dropdown-link">2:30 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/2-45-marathon-pace/" class="dropdown-link">2:45 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/3-hour-marathon-pace/" class="dropdown-link">3:00 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/315-marathon-pace/" class="dropdown-link">3:15 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/330-marathon-pace/" class="dropdown-link">3:30 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/345-marathon-pace/" class="dropdown-link">3:45 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/4-hour-marathon-pace/" class="dropdown-link">4:00 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/415-marathon-pace/" class="dropdown-link">4:15 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/430-marathon-pace/" class="dropdown-link">4:30 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/445-marathon-pace/" class="dropdown-link">4:45 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/5-hour-marathon-pace/" class="dropdown-link">5:00 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/530-marathon-pace/" class="dropdown-link">5:30 Marathon Pace</a></li>
+                        <li><a href="/marathon-pace-chart-final/6-hour-marathon-pace/" class="dropdown-link">6:00 Marathon Pace</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Half Marathon Pace Chart</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/half-marathon-pace-chart-final/" class="dropdown-link">Half Marathon Pace Chart</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/115-half-marathon-pace/" class="dropdown-link">1:15 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/120-half-marathon-pace/" class="dropdown-link">1:20 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/125-half-marathon-pace/" class="dropdown-link">1:25 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/130-half-marathon-pace/" class="dropdown-link">1:30 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/135-half-marathon-pace/" class="dropdown-link">1:35 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/140-half-marathon-pace/" class="dropdown-link">1:40 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/145-half-marathon-pace/" class="dropdown-link">1:45 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/150-half-marathon-pace/" class="dropdown-link">1:50 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/155-half-marathon-pace/" class="dropdown-link">1:55 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/2-hour-half-marathon-pace/" class="dropdown-link">2:00 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/215-half-marathon-pace/" class="dropdown-link">2:15 Half Marathon Pace</a></li>
+                        <li><a href="/half-marathon-pace-chart-final/230-half-marathon-pace/" class="dropdown-link">2:30 Half Marathon Pace</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/knowledge/" class="nav-link">Running Knowledge</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pace-calculator.html" class="nav-link">Pace Calculator</a>
+                </li>
+            </ul>
                 </div>
+    </nav>
 
-                <div class="chart-card half-marathon-card">
-                    <div class="chart-icon">🏃‍♀️</div>
-                    <h2>Half Marathon Pace Chart</h2>
-                    <p>Half marathon pacing strategies and charts for finish times from 1:15 to 3:00+</p>
-                    <button class="chart-button half-marathon-button" onclick="navigateToHalfMarathon()">
-                        View Half Marathon Pace Chart
-                    </button>
+    <!-- Hero Section with Background Image -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Marathon Pace Chart</h1>
+                <p class="hero-subtitle">Your ultimate guide to marathon pacing and half marathon pace charts</p>
                 </div>
+                </div>
+                </div>
+    </section>
 
-                <div class="chart-card">
-                    <div class="chart-icon">🏃</div>
-                    <h2>5K Distance Guide</h2>
-                    <p>How many miles is a 5K? Complete guide to 5K distance, training tips, and pace calculator.</p>
-                    <a class="chart-button" href="/how-many-miles-is-a-5k.html">5K Distance Guide</a>
-                </div>
-
-                <div class="chart-card">
-                    <div class="chart-icon">📚</div>
-                    <h2>Running Knowledge Hub</h2>
-                    <p>Deep-dive articles on marathon pace, half marathon pace charts, and pace calculator tips.</p>
-                    <a class="chart-button" href="/knowledge/">Explore Knowledge</a>
-                </div>
+    <!-- Main Content Cards -->
+    <main class="main-content">
+        <div class="content-cards">
+            <!-- Marathon Pace Chart Card -->
+            <div class="content-card marathon-card">
+                <div class="card-icon">🏃‍♂️</div>
+                <h2>Marathon Pace Chart</h2>
+                <p>Complete marathon pacing guide with detailed charts for every finish time from 2:30 to 6:00+</p>
+                <a href="/marathon-pace-chart-final/" class="card-button">View Marathon Charts</a>
             </div>
 
-            <div class="calculator-section">
-                <h2>Custom Pace Calculator</h2>
-                <div class="calculator-card">
-                    <div class="calculator-inputs">
-                        <div class="input-group">
-                            <label for="distance">Distance:</label>
-                            <select id="distance">
-                                <option value="5">5K</option>
-                                <option value="10">10K</option>
-                                <option value="21.0975">Half Marathon</option>
-                                <option value="42.195">Marathon</option>
-                            </select>
+            <!-- Half Marathon Pace Chart Card -->
+            <div class="content-card half-marathon-card">
+                <div class="card-icon">🏃‍♀️</div>
+                <h2>Half Marathon Pace Chart</h2>
+                <p>Half marathon pacing strategies and charts for finish times from 1:15 to 3:00+</p>
+                <a href="/half-marathon-pace-chart-final/" class="card-button">View Half Marathon Charts</a>
                         </div>
-                        <div class="input-group">
-                            <label for="hours">Hours:</label>
-                            <input type="number" id="hours" min="0" max="6" value="3">
+
+            <!-- Running Knowledge Card -->
+            <div class="content-card knowledge-card">
+                <div class="card-icon">📚</div>
+                <h2>Running Knowledge</h2>
+                <p>Professional running training knowledge, marathon history, training strategies and tips</p>
+                <a href="/knowledge/" class="card-button">Learn More</a>
                         </div>
-                        <div class="input-group">
-                            <label for="minutes">Minutes:</label>
-                            <input type="number" id="minutes" min="0" max="59" value="30">
-                        </div>
-                        <div class="input-group">
-                            <label for="seconds">Seconds:</label>
-                            <input type="number" id="seconds" min="0" max="59" value="0">
-                        </div>
-                    </div>
-                    <button class="calculate-button" onclick="calculatePace()">Calculate Pace</button>
-                    <div id="pace-result" class="pace-result"></div>
+
+            <!-- Pace Calculator Card -->
+            <div class="content-card calculator-card">
+                <div class="card-icon">🧮</div>
+                <h2>Pace Calculator</h2>
+                <p>Smart pace calculation tool to calculate optimal pace based on target time</p>
+                <a href="/pace-calculator.html" class="card-button">Start Calculating</a>
                 </div>
             </div>
         </main>
 
+    <!-- Footer -->
         <footer class="footer">
+        <div class="footer-content">
             <p>&copy; 2024 Marathon Pace Chart. Your ultimate running companion.</p>
+            <div class="footer-links">
+                <a href="/marathon-pace-chart-final/">Marathon Pace Chart</a>
+                <a href="/half-marathon-pace-chart-final/">Half Marathon Pace Chart</a>
+                <a href="/knowledge/">Running Knowledge</a>
+                <a href="/pace-calculator.html">Pace Calculator</a>
+            </div>
+        </div>
         </footer>
-    </div>
 
     <script src="script.js"></script>
 </body>

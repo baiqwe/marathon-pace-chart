@@ -1,11 +1,45 @@
 User-agent: *
 Allow: /
 
+# Disallow duplicate content directories
+Disallow: /half-marathon-pace-chart-new/
+Disallow: /marathon-pace-chart-new/
+Disallow: /marathon-pace-chart/
+
+# Disallow root-level duplicate HTML files
+Disallow: /half-marathon-pace-1-15.html
+Disallow: /half-marathon-pace-1-20.html
+Disallow: /half-marathon-pace-1-25.html
+Disallow: /half-marathon-pace-1-30.html
+Disallow: /half-marathon-pace-1-35.html
+Disallow: /half-marathon-pace-1-40.html
+Disallow: /half-marathon-pace-1-45.html
+Disallow: /half-marathon-pace-1-50.html
+Disallow: /half-marathon-pace-1-55.html
+Disallow: /half-marathon-pace-2-00.html
+Disallow: /half-marathon-pace-2-15.html
+Disallow: /half-marathon-pace-2-30.html
+Disallow: /marathon-pace-2-30.html
+Disallow: /marathon-pace-2-45.html
+Disallow: /marathon-pace-3-00.html
+Disallow: /marathon-pace-3-15.html
+Disallow: /marathon-pace-3-30.html
+Disallow: /marathon-pace-3-45.html
+Disallow: /marathon-pace-4-00.html
+Disallow: /marathon-pace-4-15.html
+Disallow: /marathon-pace-4-30.html
+Disallow: /marathon-pace-4-45.html
+Disallow: /marathon-pace-5-00.html
+Disallow: /marathon-pace-5-30.html
+Disallow: /marathon-pace-6-00.html
+
+# Allow main content directories
+Allow: /half-marathon-pace-chart-final/
+Allow: /marathon-pace-chart-final/
+Allow: /knowledge/
+
 # Sitemap location
-Sitemap: https://MARATHON-PACE.COM/sitemap.xml
+Sitemap: https://marathon-pace.com/sitemap.xml
 
-# Allow all search engines to crawl all content
-# No restrictions on crawling
-
-# Crawl-delay (optional - helps prevent overloading server)
+# Crawl delay (optional, helps with server load)
 Crawl-delay: 1

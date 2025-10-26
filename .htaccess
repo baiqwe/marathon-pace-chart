@@ -1,0 +1,70 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect www to non-www (canonical domain)
+RewriteCond %{HTTP_HOST} ^www\.marathon-pace\.com$ [NC]
+RewriteRule ^(.*)$ https://marathon-pace.com/$1 [R=301,L]
+
+# Redirect old domain to new domain
+RewriteCond %{HTTP_HOST} ^3-hour-marathon-pace\.com$ [NC]
+RewriteRule ^(.*)$ https://marathon-pace.com/$1 [R=301,L]
+
+# Redirect duplicate pages to canonical versions
+# Half Marathon Pace Chart redirects
+RewriteRule ^half-marathon-pace-chart-new/(.*)$ /half-marathon-pace-chart-final/$1 [R=301,L]
+RewriteRule ^marathon-pace-chart-new/(.*)$ /marathon-pace-chart-final/$1 [R=301,L]
+
+# Redirect old marathon-pace-chart/ to marathon-pace-chart-final/
+RewriteRule ^marathon-pace-chart/(.*)$ /marathon-pace-chart-final/$1 [R=301,L]
+
+# Specific redirects for root-level HTML files to canonical versions
+RewriteRule ^half-marathon-pace-1-15\.html$ /half-marathon-pace-chart-final/115-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-20\.html$ /half-marathon-pace-chart-final/120-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-25\.html$ /half-marathon-pace-chart-final/125-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-30\.html$ /half-marathon-pace-chart-final/130-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-35\.html$ /half-marathon-pace-chart-final/135-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-40\.html$ /half-marathon-pace-chart-final/140-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-45\.html$ /half-marathon-pace-chart-final/145-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-50\.html$ /half-marathon-pace-chart-final/150-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-1-55\.html$ /half-marathon-pace-chart-final/155-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-2-00\.html$ /half-marathon-pace-chart-final/2-hour-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-2-15\.html$ /half-marathon-pace-chart-final/215-half-marathon-pace/ [R=301,L]
+RewriteRule ^half-marathon-pace-2-30\.html$ /half-marathon-pace-chart-final/230-half-marathon-pace/ [R=301,L]
+
+# Marathon pace redirects
+RewriteRule ^marathon-pace-2-30\.html$ /marathon-pace-chart-final/2-30-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-2-45\.html$ /marathon-pace-chart-final/2-45-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-3-00\.html$ /marathon-pace-chart-final/3-hour-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-3-15\.html$ /marathon-pace-chart-final/315-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-3-30\.html$ /marathon-pace-chart-final/330-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-3-45\.html$ /marathon-pace-chart-final/345-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-4-00\.html$ /marathon-pace-chart-final/4-hour-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-4-15\.html$ /marathon-pace-chart-final/415-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-4-30\.html$ /marathon-pace-chart-final/430-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-4-45\.html$ /marathon-pace-chart-final/445-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-5-00\.html$ /marathon-pace-chart-final/5-hour-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-5-30\.html$ /marathon-pace-chart-final/530-marathon-pace/ [R=301,L]
+RewriteRule ^marathon-pace-6-00\.html$ /marathon-pace-chart-final/6-hour-marathon-pace/ [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Cache control for better performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
