@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-13BSS6RE7L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-13BSS6RE7L');
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2499950673294937"
+         crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msvalidate.01" content="C9F29A165ABC3446FB3EA6CBC15385F3" />
+    
+    <title>Running Pace Calculator | Run & Race Pace Calculator | Strava Style</title>
+    <meta name="description" content="Free running pace calculator & race pace calculator. Calculate your perfect running pace, marathon pace, training pace like Strava. Simple pace calculations for runners of all levels.">
+    <meta name="keywords" content="running pace calculator,pace calculator running,marathon pace calculator,run pace calculator,race pace calculator,strava pace calculator">
+    <link rel="canonical" href="https://marathon-pace.com/running-pace-calculator/">
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../marathon-styles.css?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../android-chrome-512x512.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="theme-color" content="#4F46E5">
+
+    <!-- Inline background / theme styles for local preview -->
+    <style>
+        /* Page base */
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            margin: 0;
+            color: #0f172a;
+            background-color: #fbfcfe; /* very light */
+            /* layered subtle pattern using gradients for large-shape, light background */
+            background-image:
+                radial-gradient(circle at 10% 10%, rgba(79,70,229,0.035) 0, rgba(79,70,229,0.02) 10%, transparent 30%),
+                radial-gradient(circle at 85% 85%, rgba(14,165,233,0.03) 0, rgba(14,165,233,0.015) 12%, transparent 36%),
+                linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.6));
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* Hero with larger soft pattern and card-like container */
+        .calculator-hero {
+            padding: 48px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(1000px 400px at 10% 20%, rgba(99,102,241,0.06), transparent 25%),
+                        radial-gradient(800px 300px at 90% 80%, rgba(14,165,233,0.04), transparent 25%);
+            border-bottom: 1px solid rgba(15,23,42,0.04);
+        }
+
+        .hero-title {
+            margin: 0 0 8px 0;
+            font-size: 28px;
+            color: #0b1220;
+        }
+        .hero-subtitle { color: #475569; margin: 0 0 12px 0; }
+
+        /* Slight card look for main container */
+        .calculator-container {
+            max-width: 1100px;
+            margin: 24px auto;
+            padding: 20px;
+        }
+
+        .calculator-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,252,0.9));
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+            padding: 20px;
+        }
+
+        /* Make split times and other elements readable on light bg */
+        .result-card { background: transparent; }
+
+        /* small responsive niceties */
+        @media (min-width: 900px) {
+            .hero-title { font-size: 36px; }
+        }
+    </style>
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Running Pace Calculator | Marathon & Half Marathon Pace Calculator">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://marathon-pace.com/android-chrome-512x512.png">
+    <meta property="og:url" content="https://marathon-pace.com/running-pace-calculator/">
+    <meta property="og:description" content="Free running pace calculator for marathons, half marathons, 10K and 5K. Calculate your perfect running pace and finish time.">
+    <meta property="og:site_name" content="Marathon Pace">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Running Pace Calculator">
+    <meta name="twitter:description" content="Free running pace calculator for all distances. Simple and accurate pace calculations.">
+    <meta name="twitter:image" content="https://marathon-pace.com/android-chrome-512x512.png">
+    <meta name="twitter:site" content="@MarathonPace">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Running & Race Pace Calculator",
+        "description": "Calculate running pace, race pace, and training pace like Strava for all distances",
+        "applicationCategory": "Sports",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Marathon Pace",
+            "url": "https://marathon-pace.com"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://marathon-pace.com/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Running Pace Calculator",
+            "item": "https://marathon-pace.com/running-pace-calculator/"
+        }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What pace should I run for my first marathon?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For your first marathon, aim for a comfortable pace that's about 1 minute slower per mile than your half marathon pace. Use our calculator to find the right pace based on your target finish time."
+            }
+        },{
+            "@type": "Question",
+            "name": "How do I calculate my running pace?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To calculate your running pace manually, divide your total time in minutes by the distance. Our pace calculator automates this process and provides both km and mile paces."
+            }
+        },{
+            "@type": "Question",
+            "name": "What's a good running pace for beginners?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Beginners should focus on maintaining a comfortable pace where they can hold a conversation. This typically means 6:00-7:00/km (9:39-11:16/mile) for general training runs."
+            }
+        }]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img src="../android-chrome-192x192.png" alt="Marathon Pace Logo" class="logo-icon">
+                    <span class="logo-text">Marathon Pace</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Marathon Pace Chart</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../marathon-pace-chart-final/index.html" class="dropdown-link">Marathon Pace Chart</a></li>
+                        <li><a href="../marathon-pace-chart-final/3-hour-marathon-pace/index.html" class="dropdown-link">3:00 Marathon Pace</a></li>
+                        <li><a href="../marathon-pace-chart-final/4-hour-marathon-pace/index.html" class="dropdown-link">4:00 Marathon Pace</a></li>
+                        <li><a href="../marathon-pace-chart-final/index.html" class="dropdown-link">View All Times</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Half Marathon Pace Chart</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../half-marathon-pace-chart-final/index.html" class="dropdown-link">Half Marathon Pace Chart</a></li>
+                        <li><a href="../half-marathon-pace-chart-final/130-half-marathon-pace/index.html" class="dropdown-link">1:30 Half Marathon</a></li>
+                        <li><a href="../half-marathon-pace-chart-final/2-hour-half-marathon-pace/index.html" class="dropdown-link">2:00 Half Marathon</a></li>
+                        <li><a href="../half-marathon-pace-chart-final/index.html" class="dropdown-link">View All Times</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../knowledge/index.html" class="nav-link">Running Knowledge</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Pace Calculator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li aria-current="page">Running Pace Calculator</li>
+        </ol>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="calculator-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Running Pace Calculator & Race Pace Calculator</h1>
+            <p class="hero-subtitle">Calculate your perfect running pace, race pace, and training pace like Strava</p>
+            <div class="hero-features">
+                <span class="feature-tag">Run Pace</span>
+                <span class="feature-tag">Race Pace</span>
+                <span class="feature-tag">Marathon Pace</span>
+                <span class="feature-tag">Strava Style</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Calculator Section -->
+    <main class="calculator-main">
+        <div class="calculator-container">
+            <div class="calculator-card">
+                <h2>Running Pace Calculator Tool</h2>
+                <p class="calculator-description">Enter your target distance and finish time to calculate your optimal running pace</p>
+                
+                <div class="unit-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="unit-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="unit-label">Show miles</span>
+                </div>
+
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="distance">Select Distance:</label>
+                        <select id="distance" class="form-select">
+                            <optgroup label="Common Distances">
+                                <option value="5">5K (5 kilometers)</option>
+                                <option value="10">10K (10 kilometers)</option>
+                                <option value="21.0975">Half Marathon (21.1 km)</option>
+                                <option value="42.195">Marathon (42.2 km)</option>
+                            </optgroup>
+                            <optgroup label="Other Distances">
+                                <option value="1">1 kilometer</option>
+                                <option value="3">3K</option>
+                                <option value="15">15K</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custom-distance" class="custom-distance-label">
+                            Or enter custom distance (kilometers):
+                            <input type="number" id="custom-distance" min="0.1" step="0.1" class="form-input">
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="target-time">Target Finish Time:</label>
+                        <div class="time-inputs">
+                            <div class="time-input">
+                                <label for="hours">Hours</label>
+                                <input type="number" id="hours" min="0" max="24" value="0" class="form-input">
+                            </div>
+                            <div class="time-input">
+                                <label for="minutes">Minutes</label>
+                                <input type="number" id="minutes" min="0" max="59" value="30" class="form-input">
+                            </div>
+                            <div class="time-input">
+                                <label for="seconds">Seconds</label>
+                                <input type="number" id="seconds" min="0" max="59" value="0" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculatePace()">Calculate Pace</button>
+
+                    <div class="common-paces">
+                        <h3>Quick Pace Selections:</h3>
+                        <div class="pace-buttons">
+                            <button onclick="setPredefinedPace('marathon-beginner')" class="pace-preset-btn">
+                                4:30 Marathon
+                            </button>
+                            <button onclick="setPredefinedPace('half-intermediate')" class="pace-preset-btn">
+                                1:45 Half
+                            </button>
+                            <button onclick="setPredefinedPace('10k-advanced')" class="pace-preset-btn">
+                                45min 10K
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pace-result" class="pace-result">
+                    <div class="result-card">
+                        <h2>Your Calculated Pace</h2>
+                        <div class="result-stats">
+                            <div class="result-stat">
+                                <span class="stat-label">Pace per Kilometer</span>
+                                <span class="stat-value" id="pace-per-km">--:--</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="stat-label">Pace per Mile</span>
+                                <span class="stat-value" id="pace-per-mile">--:--</span>
+                            </div>
+                            <div class="result-stat">
+                                <span class="stat-label">Average Speed</span>
+                                <span class="stat-value" id="average-speed">-- km/h</span>
+                            </div>
+                        </div>
+                        <div class="split-times" id="split-times">
+                            <!-- Split times will be inserted here by JavaScript -->
+                        </div>
+                        <div class="save-share">
+                            <button onclick="savePace()" class="save-btn">Save Pace</button>
+                            <button onclick="sharePace()" class="share-btn">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculator Guide Section -->
+            <div class="calculator-guide">
+                <h2>Complete Running & Race Pace Calculator Guide</h2>
+                <div class="guide-sections">
+                    <section class="guide-section">
+                        <h3>What is Running & Race Pace?</h3>
+                        <p>Running pace and race pace are essential metrics for runners, similar to what you see in Strava. Whether you're training or racing, understanding your pace (minutes per kilometer or mile) helps optimize your performance and achieve your goals.</p>
+                    </section>
+                    
+                    <section class="guide-section">
+                        <h3>How to Use Our Advanced Pace Calculator</h3>
+                        <ol>
+                            <li>Choose your race or run distance (5K, 10K, Half Marathon, or Marathon)</li>
+                            <li>Input your target finish time or desired pace</li>
+                            <li>Get instant pace calculations for training and racing</li>
+                            <li>Use our Strava-style insights to plan your training</li>
+                            <li>Save and share your calculated paces</li>
+                        </ol>
+                    </section>
+                    
+                    <section class="guide-section">
+                        <h3>Common Running Paces</h3>
+                        <ul>
+                            <li>Beginner Marathon: 5:30-6:30/km (8:51-10:27/mile)</li>
+                            <li>Intermediate Half Marathon: 5:00-5:30/km (8:03-8:51/mile)</li>
+                            <li>Advanced 10K: 4:00-4:30/km (6:26-7:14/mile)</li>
+                            <li>Elite 5K: 3:00-3:30/km (4:50-5:38/mile)</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>What pace should I run for my first marathon?</h3>
+                        <p>For your first marathon, aim for a comfortable pace that's about 1 minute slower per kilometer than your half marathon pace. Use our calculator to find the right pace based on your target finish time.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I calculate my running pace?</h3>
+                        <p>To calculate your running pace manually, divide your total time in minutes by the distance. Our pace calculator automates this process and provides both km and mile paces.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What's a good running pace for beginners?</h3>
+                        <p>Beginners should focus on maintaining a comfortable pace where they can hold a conversation. This typically means 6:00-7:00/km (9:39-11:16/mile) for general training runs.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How can I improve my running pace?</h3>
+                        <p>Improve your pace through structured training including speed work, tempo runs, and long runs. Use our calculator to set progressive pace goals throughout your training.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h2>Related Resources</h2>
+                <div class="link-cards">
+                    <a href="../marathon-pace-chart-final/index.html" class="link-card">
+                        <div class="link-icon">🏃‍♂️</div>
+                        <h3>Marathon Pace Charts</h3>
+                        <p>Complete pace charts for all finish times</p>
+                    </a>
+                    <a href="../half-marathon-pace-chart-final/index.html" class="link-card">
+                        <div class="link-icon">🏃‍♀️</div>
+                        <h3>Half Marathon Charts</h3>
+                        <p>Detailed half marathon pace guides</p>
+                    </a>
+                    <a href="../knowledge/running-pace-calculator-pace-per-km-mile/index.html" class="link-card">
+                        <div class="link-icon">📚</div>
+                        <h3>Pace Guide</h3>
+                        <p>Learn more about running paces</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Marathon Pace Chart. Your ultimate running companion.</p>
+            <div class="footer-links">
+                <a href="../marathon-pace-chart-final/index.html">Marathon Pace Chart</a>
+                <a href="../half-marathon-pace-chart-final/index.html">Half Marathon Pace Chart</a>
+                <a href="../knowledge/index.html">Running Knowledge</a>
+                <a href="index.html">Pace Calculator</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Unit toggle functionality
+        const unitToggle = document.getElementById('unit-toggle');
+        let useMetric = true; // Default to metric units
+
+        unitToggle.addEventListener('change', function() {
+            useMetric = !this.checked;
+            updateDistanceLabels();
+            if (document.getElementById('pace-result').style.display === 'block') {
+                calculatePace(); // Recalculate if results are showing
+            }
+        });
+
+        function updateDistanceLabels() {
+            const distanceSelect = document.getElementById('distance');
+            const customDistanceLabel = document.querySelector('.custom-distance-label');
+            
+            if (useMetric) {
+                customDistanceLabel.textContent = 'Or enter custom distance (kilometers):';
+                // Update dropdown labels to show km
+                // ... (update distance options)
+            } else {
+                customDistanceLabel.textContent = 'Or enter custom distance (miles):';
+                // Update dropdown labels to show miles
+                // ... (update distance options)
+            }
+        }
+
+        function calculatePace() {
+            const distanceSelect = document.getElementById('distance');
+            const customDistance = document.getElementById('custom-distance');
+            let distance = parseFloat(distanceSelect.value);
+            
+            if (customDistance.value) {
+                distance = parseFloat(customDistance.value);
+            }
+            
+            if (!useMetric) {
+                distance = distance * 1.60934; // Convert miles to km for calculation
+            }
+
+            const hours = parseInt(document.getElementById('hours').value) || 0;
+            const minutes = parseInt(document.getElementById('minutes').value) || 0;
+            const seconds = parseInt(document.getElementById('seconds').value) || 0;
+            
+            const totalTimeInSeconds = hours * 3600 + minutes * 60 + seconds;
+            
+            if (totalTimeInSeconds === 0 || distance === 0) {
+                alert('Please enter valid distance and time');
+                return;
+            }
+            
+            // Calculate paces
+            const pacePerKmInSeconds = totalTimeInSeconds / distance;
+            const paceMinutes = Math.floor(pacePerKmInSeconds / 60);
+            const paceSeconds = Math.round(pacePerKmInSeconds % 60);
+            
+            const distanceInMiles = distance * 0.621371;
+            const pacePerMileInSeconds = totalTimeInSeconds / distanceInMiles;
+            const paceMileMinutes = Math.floor(pacePerMileInSeconds / 60);
+            const paceMileSeconds = Math.round(pacePerMileInSeconds % 60);
+            
+            // Calculate speed
+            const averageSpeed = (distance / totalTimeInSeconds) * 3600;
+            const averageSpeedMph = averageSpeed * 0.621371;
+            
+            // Display results
+            document.getElementById('pace-per-km').textContent = 
+                `${paceMinutes}:${paceSeconds.toString().padStart(2, '0')}`;
+            document.getElementById('pace-per-mile').textContent = 
+                `${paceMileMinutes}:${paceMileSeconds.toString().padStart(2, '0')}`;
+            document.getElementById('average-speed').textContent = 
+                `${averageSpeed.toFixed(1)} km/h (${averageSpeedMph.toFixed(1)} mph)`;
+            
+            // Generate and display split times
+            generateSplitTimes(distance, pacePerKmInSeconds);
+            
+            // Show results
+            document.getElementById('pace-result').style.display = 'block';
+        }
+
+        function generateSplitTimes(distance, paceSeconds) {
+            const splitTimesDiv = document.getElementById('split-times');
+            splitTimesDiv.innerHTML = '<h3>Split Times</h3>';
+            const splits = document.createElement('div');
+            splits.className = 'splits-grid';
+            
+            const intervals = distance <= 5 ? 1 : distance <= 21.0975 ? 5 : 10;
+            let currentDistance = intervals;
+            
+            while (currentDistance <= distance) {
+                const totalSeconds = currentDistance * paceSeconds;
+                const hours = Math.floor(totalSeconds / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = Math.round(totalSeconds % 60);
+                
+                const split = document.createElement('div');
+                split.className = 'split-time';
+                split.innerHTML = `
+                    <span class="split-distance">${currentDistance}K</span>
+                    <span class="split-time-value">${hours > 0 ? hours + ':' : ''}${minutes}:${seconds.toString().padStart(2, '0')}</span>
+                `;
+                splits.appendChild(split);
+                
+                currentDistance += intervals;
+            }
+            
+            splitTimesDiv.appendChild(splits);
+        }
+
+        function setPredefinedPace(type) {
+            const distanceSelect = document.getElementById('distance');
+            const hours = document.getElementById('hours');
+            const minutes = document.getElementById('minutes');
+            const seconds = document.getElementById('seconds');
+            
+            switch(type) {
+                case 'marathon-beginner':
+                    distanceSelect.value = '42.195';
+                    hours.value = '4';
+                    minutes.value = '30';
+                    seconds.value = '0';
+                    break;
+                case 'half-intermediate':
+                    distanceSelect.value = '21.0975';
+                    hours.value = '1';
+                    minutes.value = '45';
+                    seconds.value = '0';
+                    break;
+                case '10k-advanced':
+                    distanceSelect.value = '10';
+                    hours.value = '0';
+                    minutes.value = '45';
+                    seconds.value = '0';
+                    break;
+            }
+            
+            calculatePace();
+        }
+
+        function savePace() {
+            // Implementation for saving pace to local storage
+            const paceData = {
+                kmPace: document.getElementById('pace-per-km').textContent,
+                milePace: document.getElementById('pace-per-mile').textContent,
+                speed: document.getElementById('average-speed').textContent
+            };
+            
+            const savedPaces = JSON.parse(localStorage.getItem('savedPaces') || '[]');
+            savedPaces.push(paceData);
+            localStorage.setItem('savedPaces', JSON.stringify(savedPaces));
+            
+            alert('Pace saved successfully!');
+        }
+
+        function sharePace() {
+            const paceText = `My running pace: ${document.getElementById('pace-per-km').textContent} per km (${document.getElementById('pace-per-mile').textContent} per mile) - Calculated with Marathon Pace Calculator`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Running Pace',
+                    text: paceText,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback to copying to clipboard
+                navigator.clipboard.writeText(paceText)
+                    .then(() => alert('Pace copied to clipboard!'))
+                    .catch(err => console.error('Failed to copy pace:', err));
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('pace-result').style.display = 'none';
+            
+            // Set up distance select and custom distance interaction
+            const distanceSelect = document.getElementById('distance');
+            const customDistance = document.getElementById('custom-distance');
+            
+            distanceSelect.addEventListener('change', function() {
+                customDistance.value = ''; // Clear custom distance when select is used
+            });
+            
+            customDistance.addEventListener('input', function() {
+                if (this.value) {
+                    distanceSelect.value = '5'; // Reset select when custom distance is used
+                }
+            });
+        });
+    </script>
+</body>
+</html>
