@@ -7,35 +7,59 @@ function navigateToHalfMarathon() {
     window.location.href = 'half-marathon-pace-chart-final/';
 }
 
-// Mobile dropdown menu functionality
+// Dropdown menu functionality (desktop hover + mobile click)
 document.addEventListener('DOMContentLoaded', function() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    const isMobile = window.innerWidth <= 768;
     
     dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            const dropdown = this.parentElement;
-            const isActive = dropdown.classList.contains('active');
-            
-            // Close all other dropdowns
-            document.querySelectorAll('.dropdown').forEach(d => {
-                d.classList.remove('active');
+        // For mobile: use click
+        if (isMobile) {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = this.closest('.dropdown');
+                if (!dropdown) return;
+                
+                const isActive = dropdown.classList.contains('active');
+                
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown').forEach(d => {
+                    d.classList.remove('active');
+                });
+                
+                // Toggle current dropdown
+                if (!isActive) {
+                    dropdown.classList.add('active');
+                }
             });
-            
-            // Toggle current dropdown
-            if (!isActive) {
-                dropdown.classList.add('active');
-            }
-        });
+        } else {
+            // For desktop: prevent default on click, let hover handle it
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+            });
+        }
     });
     
-    // Close dropdowns when clicking outside
+    // Close dropdowns when clicking outside (both mobile and desktop)
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.dropdown')) {
             document.querySelectorAll('.dropdown').forEach(d => {
                 d.classList.remove('active');
             });
         }
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Close all dropdowns on resize
+            document.querySelectorAll('.dropdown').forEach(d => {
+                d.classList.remove('active');
+            });
+        }, 250);
     });
 });
 
