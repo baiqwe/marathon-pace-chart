@@ -1,7 +1,10 @@
+# robots.txt for marathon-pace.com
+# This file tells search engine crawlers which pages they can and cannot access
+
 User-agent: *
 Allow: /
 
-# Disallow duplicate content directories
+# Disallow duplicate/old content directories (to prevent duplicate content issues)
 Disallow: /half-marathon-pace-chart-new/
 Disallow: /marathon-pace-chart-new/
 Disallow: /marathon-pace-chart/
