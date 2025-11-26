@@ -10,12 +10,17 @@ RewriteCond %{HTTP_HOST} ^3-hour-marathon-pace\.com$ [NC]
 RewriteRule ^(.*)$ https://marathon-pace.com/$1 [R=301,L]
 
 # Redirect duplicate pages to canonical versions
+# Note: Order matters - more specific rules first to avoid redirect chains
 # Half Marathon Pace Chart redirects
 RewriteRule ^half-marathon-pace-chart-new/(.*)$ /half-marathon-pace-chart-final/$1 [R=301,L]
-RewriteRule ^marathon-pace-chart-new/(.*)$ /marathon-pace-chart-final/$1 [R=301,L]
 
-# Redirect old marathon-pace-chart/ to marathon-pace-chart-final/
+# Marathon Pace Chart redirects
+RewriteRule ^marathon-pace-chart-new/(.*)$ /marathon-pace-chart-final/$1 [R=301,L]
 RewriteRule ^marathon-pace-chart/(.*)$ /marathon-pace-chart-final/$1 [R=301,L]
+
+# Redirect chart HTML files to final directories
+RewriteRule ^marathon-pace-chart\.html$ /marathon-pace-chart-final/ [R=301,L]
+RewriteRule ^half-marathon-pace-chart\.html$ /half-marathon-pace-chart-final/ [R=301,L]
 
 # Specific redirects for root-level HTML files to canonical versions
 RewriteRule ^half-marathon-pace-1-15\.html$ /half-marathon-pace-chart-final/115-half-marathon-pace/ [R=301,L]

@@ -413,6 +413,50 @@
     line-height: 1.4;
 }
 
+/* Related Pace Links */
+.related-pace-links {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 40px 0;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.related-pace-links h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2d3748;
+    text-align: center;
+    font-weight: 600;
+}
+
+.related-pace-links-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.related-pace-link {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.related-pace-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+    background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+}
+
 /* Mobile optimization for Quick Links */
 @media (max-width: 768px) {
     .pace-quick-links {
@@ -434,6 +478,22 @@
         height: 35px;
         font-size: 1.3rem;
     }
+    
+    .related-pace-links {
+        padding: 20px;
+        margin: 30px 0;
+    }
+    
+    .related-pace-links-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .related-pace-link {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -447,6 +507,15 @@
     
     .pace-quick-link-content p {
         font-size: 0.85rem;
+    }
+    
+    .related-pace-links h2 {
+        font-size: 1.3rem;
+    }
+    
+    .related-pace-link {
+        font-size: 0.95rem;
+        padding: 12px 16px;
     }
 }
 /* Breadcrumb Navigation */
