@@ -125,17 +125,25 @@
 
 /* Pace Tips */
 .pace-tips {
-    background: #f8f9fa;
+    background: rgba(248, 250, 252, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 50px;
     margin-top: 40px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .pace-tips h2 {
     text-align: center;
     font-size: 2.2rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 40px;
+    background: linear-gradient(135deg, #2d3748 0%, #4F46E5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback */
     color: #2d3748;
 }
 
@@ -146,16 +154,21 @@
 }
 
 .tip-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 25px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .tip-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+    border-color: rgba(79, 70, 229, 0.3);
 }
 
 .tip-card h3 {
@@ -235,11 +248,19 @@
 }
 
 .pace-table-container {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 30px;
     margin-bottom: 40px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.3s ease;
+}
+
+.pace-table-container:hover {
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.1);
 }
 
 .pace-table {
