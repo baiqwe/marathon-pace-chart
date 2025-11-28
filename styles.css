@@ -10,9 +10,10 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8fafc;
-    background-image: radial-gradient(#e0e7ff 1px, transparent 1px);
+    background-image: url('/background-pattern.svg');
     background-size: 24px 24px;
     background-attachment: fixed;
+    background-repeat: repeat;
     min-height: 100vh;
     padding-top: 70px; /* Space for fixed navigation */
 }
