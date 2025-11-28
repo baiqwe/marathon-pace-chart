@@ -564,10 +564,10 @@
 }
 
 .breadcrumb li:not(:last-child)::after {
-    content: "›";
-    margin: 0 12px;
+    content: ">";
+    margin: 0 10px;
     color: #94a3b8;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .breadcrumb a {
