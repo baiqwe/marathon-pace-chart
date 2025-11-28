@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8fafc;
-    background-image: radial-gradient(circle at 1px 1px, rgba(224, 231, 255, 0.4) 1px, transparent 0);
+    background-image: radial-gradient(#e0e7ff 1px, transparent 1px);
     background-size: 24px 24px;
     background-attachment: fixed;
     min-height: 100vh;
@@ -448,7 +448,7 @@ h2 {
 
 .content-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
     border-color: rgba(79, 70, 229, 0.3);
 }
 
